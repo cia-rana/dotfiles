@@ -119,5 +119,3 @@ export GOARCH=amd64
 export GOBIN=$GOROOT/bin
 export GOPATH=$GOROOT/.go
 export PATH=$GOBIN:$PATH
-
-[[ -s "~/.gvm/scripts/gvm" ]] && source "~/.gvm/scripts/gvm"
