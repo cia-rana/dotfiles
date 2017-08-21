@@ -8,3 +8,5 @@ ln -s ~/dotfiles/.bash_profile
 if [ ! -e ~/dotfiles/.vim/bundle ] ;then
 	git clone git://github.com/Shougo/neobundle.vim ~/dotfiles/.vim/bundle/neobundle.vim
 fi
+
+mkdir ~/dotfiles/.vim/tmp
