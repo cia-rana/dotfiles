@@ -20,5 +20,8 @@ filetype plugin indent on
 
 NeoBundleCheck
 
-"swp output directory"
+" swp output directory
 set directory=~/dotfiles/.vim/tmp
+
+" highlight in search word
+set hlsearch
