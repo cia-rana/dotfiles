@@ -120,7 +120,7 @@ export GOBIN=$GOROOT/bin
 export GOPATH=$GOROOT/.go
 export PATH=$GOBIN:$PATH
 
-[[ -x ~/.gvm/scripts/gvm ]] && source ~/.gvm/scripts/gvm
+[[ -s ~/.gvm/scripts/gvm ]] && source ~/.gvm/scripts/gvm
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH=$PYENV_ROOT/bin:$PATH
 [[ -x ~/.pyenv/bin/pyenv ]] && eval "$(pyenv init -)"
