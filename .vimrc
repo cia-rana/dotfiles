@@ -11,6 +11,7 @@ NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/unite.vim.git'
 NeoBundle 'Shougo/neocomplete.git'
 NeoBundle 'AndrewRadev/splitjoin.vim'
+NeoBundle 'SirVer/ultisnips'
 
 " golang
 NeoBundle 'fatih/vim-go'
