@@ -10,6 +10,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/unite.vim.git'
 NeoBundle 'Shougo/neocomplete.git'
+NeoBundle 'AndrewRadev/splitjoin.vim'
 
 " golang
 NeoBundle 'fatih/vim-go'
