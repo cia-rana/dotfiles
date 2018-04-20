@@ -34,6 +34,7 @@ set directory=~/dotfiles/.vim/tmp
 
 " highlight in search word
 set hlsearch
+set incsearch
 
 " setting for scrooloose/syntastic
 set statusline+=%#warningmsg#
