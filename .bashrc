@@ -127,4 +127,6 @@ export PATH=$PYENV_ROOT/bin:$PATH
 
 export PATH="$PYENV_ROOT/versions/anaconda3-4.1.0/bin:$PATH"
 
+# to install softwere under $HOME
 export PATH=$HOME/usr/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/usr/lib64:$HOME/usr/lib:$LD_LIBRARY_PATH
