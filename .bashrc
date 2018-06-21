@@ -123,9 +123,26 @@ export PATH=$GOBIN:$PATH
 [[ -s ~/.gvm/scripts/gvm ]] && source ~/.gvm/scripts/gvm
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH=$PYENV_ROOT/bin:$PATH
-[[ -x ~/.pyenv/bin/pyenv ]] && eval "$(pyenv init -)"
+[[ -x $PYENV_ROOT/bin/pyenv ]] && eval "$($PYENV_ROOT/bin/pyenv init -)"
 
+# pyenv for python
 export PATH="$PYENV_ROOT/versions/anaconda3-4.1.0/bin:$PATH"
+
+# rbenv for ruby
+export RBENV_ROOT=$HOME/.rbenv
+if [ -d $RBENV_ROOT ]; then
+  export PATH=$RBENV_ROOT/bin:$PATH
+  eval "$(rbenv init -)"
+fi
+
+# user-specific $PATH
+export PATH=$HOME/usr/bin:$PATH
+
+# git aliases
+alias gitnetwork="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+
+# tmux
+[[ -x tmux ]] && tmux source .tmux.conf
 
 # to install softwere under $HOME
 export PATH=$HOME/usr/bin:$PATH

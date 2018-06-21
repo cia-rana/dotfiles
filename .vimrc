@@ -12,6 +12,7 @@ NeoBundle 'Shougo/unite.vim.git'
 NeoBundle 'Shougo/neocomplete.git'
 NeoBundle 'fatih/molokai'
 NeoBundle 'AndrewRadev/splitjoin.vim'
+NeoBundle 'SirVer/ultisnips'
 
 " golang
 NeoBundle 'fatih/vim-go'
@@ -33,6 +34,7 @@ set directory=~/dotfiles/.vim/tmp
 
 " highlight in search word
 set hlsearch
+set incsearch
 
 " setting for scrooloose/syntastic
 set statusline+=%#warningmsg#
