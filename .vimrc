@@ -7,7 +7,7 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'Shougo/neocomplete.git'
 NeoBundle 'Shougo/unite.vim.git'
 NeoBundle 'Shougo/neocomplete.git'
 NeoBundle 'fatih/molokai'
@@ -45,6 +45,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+set completeopt=menuone
+let g:neocomplcache_enable_auto_close_preview = 1
 
 let g:syntastic_verilog_verilator_exec = '~/usr/bin/verilator'
 
