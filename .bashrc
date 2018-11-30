@@ -143,6 +143,7 @@ alias gitnetwork="git log --graph --abbrev-commit --decorate --format=format:'%C
 
 # tmux
 [[ -x tmux ]] && tmux source .tmux.conf
+alias tmux="tmux -2"
 
 # to install softwere under $HOME
 export PATH=$HOME/usr/bin:$PATH
