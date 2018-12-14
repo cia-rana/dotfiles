@@ -148,3 +148,6 @@ alias tmux="tmux -2"
 # to install softwere under $HOME
 export PATH=$HOME/usr/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/usr/lib64:$HOME/usr/lib:$LD_LIBRARY_PATH
+
+# set vi mode
+set -o vi
