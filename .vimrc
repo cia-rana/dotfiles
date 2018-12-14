@@ -30,11 +30,19 @@ Plug 'scrooloose/syntastic'
 " vim-airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" gist
+Plug 'mattn/gist-vim'
+	Plug 'mattn/webapi-vim'
 call plug#end()
 
 filetype plugin indent on
 
 syntax on
+
+set number
+
+set hidden
 
 " change lang to English
 if has("multi_lang")
@@ -53,6 +61,9 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" eliminate the lag which the mode changes from insert to norml
+set ttimeoutlen=50
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -68,7 +79,42 @@ let g:rehash256 = 1
 let g:molokai_original = 1
 colorscheme molokai
 
-" util with 's' 
+" vim-submode
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+call submode#map('bufmove', 'n', '', '<', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+
+" airline
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#whitespace#mixed_indent_algo = 1
+let g:airline_theme='molokai'
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '▶'
+let g:airline_left_alt_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_right_alt_sep = '◀'
+let g:airline_symbols.crypt = '🔒'		"暗号化されたファイル
+let g:airline_symbols.linenr = '¶'			"行
+let g:airline_symbols.maxlinenr = '㏑'		"最大行
+let g:airline_symbols.branch = '⭠'		"gitブランチ
+let g:airline_symbols.paste = 'ρ'			"ペーストモード
+let g:airline_symbols.spell = 'Ꞩ'			"スペルチェック
+let g:airline_symbols.notexists = '∄'		"gitで管理されていない場合
+let g:airline_symbols.whitespace = 'Ξ'	"空白の警告(余分な空白など)
+
+" nnoremap
+nnoremap <C-p> :bp<CR>
+nnoremap <C-n> :bn<CR>
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -95,12 +141,3 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
-
-call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
-call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
-call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
-call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
-call submode#map('bufmove', 'n', '', '>', '<C-w>>')
-call submode#map('bufmove', 'n', '', '<', '<C-w><')
-call submode#map('bufmove', 'n', '', '+', '<C-w>+')
-call submode#map('bufmove', 'n', '', '-', '<C-w>-')
