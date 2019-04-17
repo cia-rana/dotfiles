@@ -135,6 +135,9 @@ if [ -d $RBENV_ROOT ]; then
   eval "$(rbenv init -)"
 fi
 
+export FLUTTER_ROOT="$HOME/flutter"
+export PATH=$FLUTTER_ROOT/bin:$PATH
+
 # user-specific $PATH
 export PATH=$HOME/usr/bin:$PATH
 
@@ -151,3 +154,10 @@ export LD_LIBRARY_PATH=$HOME/usr/lib64:$HOME/usr/lib:$LD_LIBRARY_PATH
 
 # set vi mode
 set -o vi
+
+if [ "$(uname)" == 'Darwin' ]; then
+  alias vim="/usr/local/bin/vim"
+fi
+
+# pub for dart
+export PATH=$PATH:$HOME/.pub-cache/bin
