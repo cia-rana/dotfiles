@@ -131,8 +131,16 @@ export PATH=$FLUTTER_ROOT/bin:$PATH
 export PATH=$HOME/usr/bin:$PATH
 
 # tmux
+case ${OSTYPE} in
+  darwin*)
+    alias tmux-clipboard="pbcopy"
+    ;;
+  linux*)
+    alias tmux-clipboard="xsel -bi"
+    ;;
+esac
 [[ -x tmux ]] && tmux source .tmux.conf
-alias tmux="tmux -2"
+alias tmux="tmux -2 -u"
 
 # to install softwere under $HOME
 export PATH=$HOME/usr/bin:$PATH
