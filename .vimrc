@@ -44,6 +44,9 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'natebosch/vim-lsc'
+
+" vue
+Plug 'posva/vim-vue'
 call plug#end()
 
 filetype plugin indent on

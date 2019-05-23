@@ -158,3 +158,7 @@ export PATH=$PATH:$HOME/.pub-cache/bin
 
 # nodebrew for node.js
 export PATH=$PATH:$HOME/.nodebrew/current/bin
+export OAHU_INFRA_DIR=/Users/s06111/Projects/cyberagent/oahu-ops
+export OAHU_DOC_DIR=/Users/s06111/Projects/cyberagent/oahu-doc
+export OAHU_FRONTEND_DIR=/Users/s06111/Projects/cyberagent/oahu-front
+export OAHU_BACKEND_DIR=/Users/s06111/Projects/cyberagent/oahu-api
