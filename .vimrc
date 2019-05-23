@@ -47,6 +47,9 @@ Plug 'natebosch/vim-lsc'
 
 " vue
 Plug 'posva/vim-vue'
+
+" indent
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 filetype plugin indent on
@@ -174,3 +177,11 @@ if executable('dart_language_server')
 		autocmd FileType dart setlocal omnifunc=lsp#complete
 	augroup END
 endif
+
+" vue
+autocmd FileType vue syntax sync fromstart
+
+" indentLine
+let g:indentLine_color_term = 111
+let g:indentLine_color_gui = "#111111"
+let g:indentLine_char = '│'
