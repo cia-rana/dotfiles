@@ -40,7 +40,7 @@ GIT_PS1_SHOWDIRTYSTATE=1
 source $HOME/dotfiles/git/contrib/completion/git-completion.bash
 source $HOME/dotfiles/git/contrib/completion/git-prompt.sh
 alias gitnetwork="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
-
+alias gitpushoriginhead="git push origin HEAD"
 
 # terminal colorize
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -127,9 +127,6 @@ fi
 export FLUTTER_ROOT="$HOME/flutter"
 export PATH=$FLUTTER_ROOT/bin:$PATH
 
-# user-specific $PATH
-export PATH=$HOME/usr/bin:$PATH
-
 # tmux
 case ${OSTYPE} in
   darwin*)
@@ -157,8 +154,13 @@ fi
 export PATH=$PATH:$HOME/.pub-cache/bin
 
 # nodebrew for node.js
-export PATH=$PATH:$HOME/.nodebrew/current/bin
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# oahu setting
 export OAHU_INFRA_DIR=/Users/s06111/Projects/cyberagent/oahu-ops
 export OAHU_DOC_DIR=/Users/s06111/Projects/cyberagent/oahu-doc
 export OAHU_FRONTEND_DIR=/Users/s06111/Projects/cyberagent/oahu-front
 export OAHU_BACKEND_DIR=/Users/s06111/Projects/cyberagent/oahu-api
+
+export PATH=/usr/local/sbin:$PATH
+export LC_ALL=ja_JP.UTF-8

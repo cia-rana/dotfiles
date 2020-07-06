@@ -48,8 +48,14 @@ Plug 'natebosch/vim-lsc'
 " vue
 Plug 'posva/vim-vue'
 
+" TypeScript
+Plug 'leafgarland/typescript-vim'
+
 " indent
 Plug 'Yggdroot/indentLine'
+
+" show the number of search results
+Plug 'osyo-manga/vim-anzu'
 call plug#end()
 
 filetype plugin indent on
@@ -184,4 +190,17 @@ autocmd FileType vue syntax sync fromstart
 " indentLine
 let g:indentLine_color_term = 111
 let g:indentLine_color_gui = "#111111"
-let g:indentLine_char = '│'
+let g:indentLine_char = '|'
+set list listchars=tab:\¦\ 
+
+" anzu
+nmap n <Plug>(anzu-n-with-echo)
+nmap N <Plug>(anzu-N-with-echo)
+nmap * <Plug>(anzu-star-with-echo)
+nmap # <Plug>(anzu-sharp-with-echo)
+nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
+set statusline=%{anzu#search_status()}
+
+" conceal
+set conceallevel=0
+let g:vim_json_syntax_conceal = 0
