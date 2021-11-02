@@ -56,6 +56,9 @@ Plug 'Yggdroot/indentLine'
 
 " show the number of search results
 Plug 'osyo-manga/vim-anzu'
+
+" json
+Plug 'elzr/vim-json'
 call plug#end()
 
 filetype plugin indent on
@@ -190,8 +193,6 @@ autocmd FileType vue syntax sync fromstart
 " indentLine
 let g:indentLine_color_term = 111
 let g:indentLine_color_gui = "#111111"
-let g:indentLine_char = '|'
-set list listchars=tab:\¦\ 
 
 " anzu
 nmap n <Plug>(anzu-n-with-echo)

@@ -111,8 +111,13 @@ export PATH=$GOBIN:$PATH
 
 [[ -s ~/.gvm/scripts/gvm ]] && source ~/.gvm/scripts/gvm
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH=$PYENV_ROOT/bin:$PATH
-[[ -x $PYENV_ROOT/bin/pyenv ]] && eval "$($PYENV_ROOT/bin/pyenv init -)"
+if [ -d $PYENV_ROOT/shims ]; then
+	export PATH=$PYENV_ROOT/shims:$PATH
+	[[ -x $PYENV_ROOT/shims/pyenv ]] && eval "$($PYENV_ROOT/shims/pyenv init -)"
+elif [ -d $PYENV_ROOT/bin ]; then
+	export PATH=$PYENV_ROOT/bin:$PATH
+	[[ -x $PYENV_ROOT/bin/pyenv ]] && eval "$($PYENV_ROOT/bin/pyenv init -)"
+fi
 
 # pyenv for python
 export PATH="$PYENV_ROOT/versions/anaconda3-4.1.0/bin:$PATH"
